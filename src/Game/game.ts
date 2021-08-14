@@ -1,7 +1,16 @@
+// Point of contace with React
 export class Game {
-  puzzle: Puzzle
-  constructor(puzzle: Puzzle){
+  // operationCallback is called upon completion of any update to the gameState
+  operationCallback: () => void  = () => {}
+  puzzle: Puzzle| null = null
+
+  setCallback(callback: () => void) {
+    this.operationCallback = callback
+  }
+
+  setPuzzle(puzzle: Puzzle){
     this.puzzle = puzzle
+    this.operationCallback()
   }
 }
 
