@@ -2,7 +2,7 @@
 export class Game {
   // operationCallback is called upon completion of any update to the gameState
   operationCallback: () => void  = () => {}
-  puzzle: Puzzle| null = null
+  puzzle: Puzzle | null = null
 
   setCallback(callback: () => void) {
     this.operationCallback = callback
@@ -20,8 +20,6 @@ export interface PuzzleProps {
   height: number
 
   stumps: Coordinate[]
-
-
   dogPosition?: Coordinate
   start: Coordinate
   destination: Coordinate
