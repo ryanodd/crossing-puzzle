@@ -16,8 +16,8 @@ export class Game {
 
 
 export interface PuzzleProps {
-  width: number
-  height: number
+  sizeX: number
+  sizeY: number
 
   stumps: Coordinate[]
   dogPosition?: Coordinate
@@ -28,8 +28,8 @@ export interface PuzzleProps {
 }
 
 export class Puzzle {
-  width: number
-  height: number
+  sizeX: number
+  sizeY: number
 
   start: Coordinate
   destination: Coordinate
@@ -40,8 +40,8 @@ export class Puzzle {
   planks: Plank[]
 
   constructor(props: PuzzleProps){
-    this.width = props.width
-    this.height = props.height
+    this.sizeX = props.sizeX
+    this.sizeY = props.sizeY
     this.start = props.start
     this.destination = props.destination
     this.playerPosition = this.start
