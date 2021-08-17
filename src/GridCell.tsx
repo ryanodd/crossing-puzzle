@@ -10,8 +10,6 @@ const Cell = styled.div<{x: number, y: number}>`
 
   width: 50px;
   height: 50px;
-  background-color: rgba(0, 0, 255, 0.15);
-  border-radius: 2px;
 
   display: flex;
   justify-content: center;
@@ -36,8 +34,8 @@ const GridCell = ({x, y}: GridCellProps) => {
         )
       }
       {
-        planks.map(plank => 
-          <Plank plank={plank}/>
+        planks.map((plank, i) => 
+          <Plank key={i} plank={plank}/>
         )
       }
     </Cell>

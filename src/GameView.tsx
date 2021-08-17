@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Puzzle } from "./Game/game";
+import { puzzleList } from "./Game/puzzleList";
 import Grid from "./Grid";
 import { useForceUpdate } from "./hooks/useForceUpdate";
 import { useTypedDispatch, useTypedSelector } from "./types";
@@ -12,34 +13,8 @@ const GameView = () => {
   // init behaviour
   useEffect(() => {
     game.setCallback(forceUpdate)
-    game.setPuzzle(new Puzzle({
-      sizeX: 5,
-      sizeY: 5,
-      stumps: [
-        [0, 0],
-        [0, 2],
-        [1, 0],
-        [1, 2],
-        [2, 3],
-        [5, 5]
-      ],
-      start: [0, 0],
-      destination: [5, 5],
-      planks: [
-        {
-          length: 1,
-          start: [0, 0],
-          end: [1, 0]
-        },
-        {
-          length: 2,
-          start: [1, 0],
-          end: [1, 2]
-        }
-      ]
-    }))
+    game.setPuzzle(new Puzzle(puzzleList[0]))
   }, [dispatch, forceUpdate, game])
-  console.log(game.puzzle)
   return (
     <Grid />
   );

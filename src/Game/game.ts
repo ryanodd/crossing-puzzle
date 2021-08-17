@@ -1,4 +1,6 @@
-// Point of contace with React
+import { linearDistance } from "./utils"
+
+// Point of contact with React
 export class Game {
   // operationCallback is called upon completion of any update to the gameState
   operationCallback: () => void  = () => {}
@@ -13,7 +15,6 @@ export class Game {
     this.operationCallback()
   }
 }
-
 
 export interface PuzzleProps {
   sizeX: number
@@ -56,7 +57,6 @@ export class Puzzle {
 }
 
 export interface PlankProps {
-  length: number
   start: Coordinate
   end: Coordinate
 }
@@ -68,7 +68,7 @@ export class Plank {
   end: Coordinate | null
 
   constructor(props: PlankProps){
-    this.length = props.length
+    this.length = linearDistance(props.start, props.end)
     this.beingCarried = false
     this.start = props.start
     this.end = props.end
