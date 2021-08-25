@@ -1,39 +1,24 @@
 import styled from 'styled-components'
+import { Button } from './Button'
 import { puzzleList } from './Game/puzzleList'
 import { useTypedSelector } from './types'
 
 const LevelSelect = styled.div`
-  display: flex;
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   box-sizing: border-box;
-  justify-content: center;
-  overflow-x: auto;
-  > :not(:last-child) {
-    margin-right: 10px;
-  }
-  flex-shrink: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 12px;
 `
 
-const LevelButton = styled.button`
+const LevelButton = styled(Button)`
   width: 40px;
   height: 40px;
-  background: transparent;
-
-  border: none;
-  cursor: pointer;
-
-  flex-shrink: 0;
-
-  background: linear-gradient(to top right, #d8da64, #f6f871);
-  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.3);
-  border-radius: 5px;
 
   font-size: 1.4rem;
-
-  :hover {
-    filter: brightness(1.05);
-  }
+  //background: linear-gradient(to top right, #41b1d3, #50c6eb);
 `
 
 const PlankPlacementSpot = () => {

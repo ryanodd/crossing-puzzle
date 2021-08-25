@@ -6,7 +6,7 @@ import { useTypedSelector } from './types'
 const GridComponent = styled.div<{sizeX?: number, sizeY?: number}>`
   width: min-content;
   display: grid;
-  background: linear-gradient(to top right, #42909b, #56bbc9);
+  background: linear-gradient(to top right, #3494d4, #46a9eb);
   border-radius: 40px;
   overflow: hidden;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);

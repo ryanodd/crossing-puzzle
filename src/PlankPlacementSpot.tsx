@@ -3,7 +3,8 @@ import { Coordinate } from './Game/types'
 import { linearDistance } from './Game/utils'
 import { useTypedSelector } from './types'
 
-const PlankPlacementSlotElement = styled.button<{rotation: number, length: number}>`
+const HitboxIncreaser = styled.button<{rotation: number, length: number}>`
+  // TODO decrease width so we aren't coming from the center of a stump
   width: calc(${props => props.length} * 500px);
   height: 200px;
   background: transparent;
@@ -11,17 +12,28 @@ const PlankPlacementSlotElement = styled.button<{rotation: number, length: numbe
   left: 50%;
   transform: rotate(${props => props.rotation}deg);
   transform-origin: center left;
+
   position: absolute;
   z-index: 2;
+
+  box-sizing: content-box;
+  padding: 24px 0; //hitbox increase
 
   border: none;
   cursor: pointer;
 
   :hover {
-    opacity: 0.4;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
-    background: linear-gradient(to top right, #ce954f, #F0B060);
+    > div {
+      opacity: 0.4;
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+      background: linear-gradient(to top right, #ce954f, #F0B060);
+    }
   }
+`
+
+const PlankPlacementSlotElement = styled.div`
+  width: 100%;
+  height: 100%;
 `
 
 interface PlankProps {
@@ -41,11 +53,13 @@ const PlankPlacementSpot = ({start, end}: PlankProps) => {
   }
 
   return(
-    <PlankPlacementSlotElement
+    <HitboxIncreaser
       onClick={handleClick}
       rotation={rotation}
       length={length}
-    />
+    >
+      <PlankPlacementSlotElement/>
+    </HitboxIncreaser>
   )
 }
 

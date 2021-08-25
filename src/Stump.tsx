@@ -13,13 +13,13 @@ const StumpElement = styled.button<{
   width: 240px;
   height: 240px;
   background: ${props => (props.isPlayerPosition ? 
-    'linear-gradient(to top right, #3ce984, #55f899)' :
-    'linear-gradient(to top right, #613206, #744010)'
+    'linear-gradient(to top right, #03c723, #0acf2b)' :
+    'linear-gradient(to top right, #532e18, #663b22)'
   )};
 
   // Checkered flag effect
   ${props => props.isDestination && css`
-    background-color: #fffcdd;
+    background-color: #ffffff;
     background-image: 
     linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%, #000000),
     linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%, #000000);
@@ -28,7 +28,7 @@ const StumpElement = styled.button<{
   `}
 
   border-radius: 30px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.35);
   position: absolute;
   z-index: 3;
 

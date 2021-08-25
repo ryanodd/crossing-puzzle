@@ -1,18 +1,15 @@
 import { Popover as AntdPopover } from 'antd'
-import { RenderFunction } from 'antd/lib/tooltip'
+import { PopoverProps as AntdPopoverProps } from 'antd'
 import { FC } from 'react'
 
 interface PopoverProps {
   enabled?: boolean
-  content: React.ReactNode | RenderFunction;
-  visible?: boolean
 }
 
-const Popover: FC<PopoverProps> = ({enabled = true, content, visible, children}) => {
-  const conditionalPropsToPass = visible === undefined ? {} : {visible} 
+const Popover: FC<PopoverProps&AntdPopoverProps> = ({enabled = true, children, ...attrs}) => {
   return(
     enabled ? (
-      <AntdPopover content={content} {...conditionalPropsToPass}>
+      <AntdPopover {...attrs} arrowPointAtCenter>
         {children}
       </AntdPopover>
     ) : (

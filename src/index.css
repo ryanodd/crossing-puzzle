@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ant-popover-content {
+}
+
+.ant-popover-inner, .ant-popover-arrow-content {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  background: linear-gradient(to top right, #c6e5ee, #edfbff);
+}
+
+.ant-popover-inner-content {
+  padding: 6px !important;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0 0 2px 0 !important;
+}

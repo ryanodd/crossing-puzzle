@@ -12,7 +12,7 @@ const PlankElement = styled.button<{
 }>`
   width: calc(${props => props.length} * 500px);
   height: 200px;
-  background: linear-gradient(to top right, #ce954f, #F0B060);
+  background: linear-gradient(to top right, #d1a46d, #dbb17e);
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.3);
   left: 50%;
   transform: rotate(${props => props.rotation}deg);

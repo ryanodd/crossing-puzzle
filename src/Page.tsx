@@ -4,7 +4,7 @@ import LevelSelect from "./LevelSelect";
 
 const PageElement = styled.div`
   height: 100vh;
-  background: linear-gradient(to top right, #254727, #378337);
+  background: linear-gradient(to top right, #a9ddec, #bcf0ff);
   overflow-y: auto;
 
   display: flex;
@@ -16,7 +16,6 @@ const Page = () => {
   
   return (
     <PageElement>
-      <LevelSelect />
       <GameView />
     </PageElement>
   );
