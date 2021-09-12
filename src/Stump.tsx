@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components'
-import { Coordinate } from './Game/types'
+import { SET_USING_KEYBOARD } from './actions'
+import { Coordinate, Direction } from './Game/types'
 import { coordsEq, includesCoord } from './Game/utils'
 import Popover from './Popover'
-import { useTypedSelector } from './types'
+import { useTypedDispatch, useTypedSelector } from './types'
 
 const StumpElement = styled.button<{
   isPlayerPosition: boolean,
@@ -33,6 +34,7 @@ const StumpElement = styled.button<{
   z-index: 3;
 
   border: none;
+  overflow: hidden;
 
   ${props => (props.isWalkable && !props.isPlayerPosition && css`
     :hover {
@@ -51,6 +53,19 @@ const StumpElement = styled.button<{
   `)}
 `
 
+const PlayerDirectionIndicator = styled.div<{ playerDirection: number }>`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: radial-gradient(160% 100% at top, #ffcf75 20%, transparent 45%);
+  width: 100%;
+  height: 100%;
+  transform: rotate(${props => props.playerDirection}deg);
+  // transform-origin: center 0px;
+` 
+
 const TutorialText = styled.h2`
   margin: 0;
 `
@@ -64,8 +79,16 @@ const Stump = ({
 }: StumpProps) => {
   const game = useTypedSelector(state => state.game)
   const puzzle = useTypedSelector(state => state.game.puzzle)
+  const usingKeyboard = useTypedSelector(state => state.usingKeyboard)
+  const dispatch = useTypedDispatch()
 
   const isPlayerPosition: boolean = coordsEq(puzzle.playerPosition, coordinate)
+  const playerDirection: number | null = usingKeyboard
+    ? puzzle.playerDirection === Direction.NORTH ? 0
+      : puzzle.playerDirection === Direction.EAST ? 90
+      : puzzle.playerDirection === Direction.SOUTH ? 180
+      : 270
+    : null
   const isDestination: boolean = coordsEq(puzzle.destination, coordinate)
   const isWalkable: boolean = includesCoord(puzzle.walkableStumps(), coordinate)
 
@@ -76,6 +99,7 @@ const Stump = ({
   )
 
   const handleClick = () => {
+    dispatch({type: SET_USING_KEYBOARD, payload: false})
     if (isWalkable) {
       puzzle.moveTo(coordinate)
     }
@@ -83,22 +107,32 @@ const Stump = ({
 
 
   return(
-    <Popover
-      enabled={!!isTutorialPromptOpen}
-      visible={!!isTutorialPromptOpen}
-      content={
-        <TutorialText>{'Click a node to move!'}</TutorialText>
-      }    
-    >
-      <StumpElement
-        onClick={handleClick}
-        isPlayerPosition={isPlayerPosition}
-        isDestination={isDestination}
-        isWalkable={isWalkable}
-        isTutorialPromptOpen={isTutorialPromptOpen}
-        disabled={!isWalkable}
-      />
-    </Popover>
+    <>
+      <Popover
+        enabled={!!isTutorialPromptOpen}
+        visible={!!isTutorialPromptOpen}
+        content={
+          <TutorialText>{'Click a node to move!'}</TutorialText>
+        }
+      >
+        <StumpElement
+          onClick={handleClick}
+          isPlayerPosition={isPlayerPosition}
+          isDestination={isDestination}
+          isWalkable={isWalkable}
+          isTutorialPromptOpen={isTutorialPromptOpen}
+          disabled={!isWalkable}
+        >
+          {
+            isPlayerPosition && playerDirection !== null && (
+              <PlayerDirectionIndicator
+                playerDirection={playerDirection}
+              />
+            )
+          }
+        </StumpElement>
+      </Popover>
+    </>
   )
 }
 

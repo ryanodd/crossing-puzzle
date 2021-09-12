@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Grid from "./Grid";
 import HeaderBar from "./HeaderBar";
 import { useForceUpdate } from "./hooks/useForceUpdate";
+import usePuzzleKeyboardListener from "./hooks/usePuzzleKeyboardListener";
 import LetterboxFitContainer from "./LetterboxFitContainer";
 import { useTypedDispatch, useTypedSelector } from "./types";
 
@@ -29,6 +30,7 @@ const GameView = () => {
   const forceUpdate = useForceUpdate()
   const dispatch = useTypedDispatch()
   const { game } = useTypedSelector(state => state)
+  usePuzzleKeyboardListener()
 
   // init behaviour
   useEffect(() => {

@@ -63,6 +63,7 @@ export class Puzzle {
   start: Coordinate
   destination: Coordinate
   playerPosition: Coordinate
+  playerDirection: Direction
   dogPosition: Coordinate | null
 
   stumps: Coordinate[]
@@ -78,6 +79,7 @@ export class Puzzle {
     this.start = props.start
     this.destination = props.destination
     this.playerPosition = this.start
+    this.playerDirection = Direction.EAST
     this.dogPosition = props.dogPosition ?? null
     this.stumps = props.stumps
     this.planks = []
@@ -175,11 +177,11 @@ export class Puzzle {
     let searchDirectionX = 0
     let searchDirectionY = 0
     if (d === Direction.NORTH){
-      searchDirectionY = 1
+      searchDirectionY = -1
     } else if (d === Direction.EAST) {
       searchDirectionX = 1
     } else if (d === Direction.SOUTH) {
-      searchDirectionY = -1
+      searchDirectionY = 1
     } else if (d === Direction.WEST) {
       searchDirectionX = -1
     }
@@ -253,6 +255,10 @@ export class Puzzle {
     plank.end = null
     plank.beingCarried = true
     this.stateChangedCallback()
+  }
+
+  setPlayerDirection(direction: Direction) {
+    this.playerDirection = direction
   }
 
   isCoordinateValid(c: Coordinate): boolean {

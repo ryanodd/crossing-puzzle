@@ -1,8 +1,10 @@
 import styled, { css } from 'styled-components'
+import { SET_USING_KEYBOARD } from './actions'
 import { Plank as PlankModel } from './Game/game'
+import { Coordinate } from './Game/types'
 import { coordsEq } from './Game/utils'
 import Popover from './Popover'
-import { useTypedSelector } from './types'
+import { useTypedDispatch, useTypedSelector } from './types'
 
 const PlankElement = styled.button<{
   rotation: number,
@@ -50,10 +52,17 @@ interface PlankProps {
 const Plank = ({plank}: PlankProps) => {
   const game = useTypedSelector(state => state.game)
   const puzzle = useTypedSelector(state => state.game.puzzle)
-  
+  const dispatch = useTypedDispatch()
 
-  const isVertical = (plank?.start?.x === plank?.end?.x)
-  const rotation = isVertical ? 90 : 0
+  // We cast to coordinate because we know we don't render planks unless they exist on the board
+  const start: Coordinate = plank.start as Coordinate
+  const end: Coordinate = plank.end as Coordinate
+
+  const isVertical = (start?.x === end.x)
+  const isBackwards = (start.x > end.x) || (start.y > end.y)
+  const rotation = isBackwards
+  ? isVertical ? 270 : 180
+  : isVertical ? 90 : 0
 
   const isTutorialPromptOpen: boolean = (
     game.currentPuzzleIndex === 0 && !!plank.start && !!plank.end &&
@@ -67,6 +76,7 @@ const Plank = ({plank}: PlankProps) => {
   )
 
   const handleClick = () => {
+    dispatch({type: SET_USING_KEYBOARD, payload: false})
     if (!!plank.start && !!plank.end && ableToPickUp) {
       puzzle.pickUpPlank(plank.start, plank.end)
     }
