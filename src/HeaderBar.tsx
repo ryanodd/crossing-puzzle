@@ -47,14 +47,7 @@ const LevelSelectButton = styled(Button)`
 `
 
 const HeaderBar = () => {
-  const forceUpdate = useForceUpdate()
-  const dispatch = useTypedDispatch()
   const { game } = useTypedSelector(state => state)
-
-  // init behaviour
-  useEffect(() => {
-    game.setCallback(forceUpdate)
-  }, [dispatch, forceUpdate, game])
   return (
     <Wrapper>
       <LeftSection>

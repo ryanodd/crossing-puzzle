@@ -2,7 +2,33 @@ import { PuzzleProps } from "./game";
 
 export const puzzleList: PuzzleProps[] = [
   {
-    title: 'Warmup A (clickmazes.com)',
+    title: 'Tutorial',
+    description: '',
+    sizeX: 8,
+    sizeY: 1,
+    stumps: [
+      {x: 0, y: 0},
+      {x: 2, y: 0},
+      {x: 4, y: 0},
+      {x: 5, y: 0},
+      {x: 7, y: 0},
+    ],
+    start: {x: 0, y: 0},
+    destination: {x: 7, y: 0},
+    planks: [
+      {
+        start: {x: 0, y: 0},
+        end: {x: 2, y: 0}
+      },
+      {
+        start: {x: 4, y: 0},
+        end: {x: 5, y: 0}
+      },
+    ],
+  },
+  {
+    title: 'Warmup A',
+    description: 'from clickmazes.com',
     sizeX: 7,
     sizeY: 3,
     stumps: [
@@ -35,7 +61,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Warmup B (clickmazes.com)',
+    title: 'Warmup B',
+    description: 'from clickmazes.com',
     sizeX: 10,
     sizeY: 3,
     stumps: [
@@ -71,7 +98,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Warmup C (clickmazes.com)',
+    title: 'Warmup C',
+    description: 'from clickmazes.com',
     sizeX: 10,
     sizeY: 3,
     stumps: [
@@ -107,7 +135,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Warmup D (clickmazes.com)',
+    title: 'Warmup D',
+    description: 'from clickmazes.com',
     sizeX: 10,
     sizeY: 3,
     stumps: [
@@ -144,7 +173,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Warmup E (clickmazes.com)',
+    title: 'Warmup E',
+    description: 'from clickmazes.com',
     sizeX: 10,
     sizeY: 3,
     stumps: [
@@ -180,7 +210,399 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Deep End (clickmazes.com)',
+    title: 'River Crossing Bonus 1',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 3,
+    stumps: [
+      {x: 0, y: 0},
+      {x: 1, y: 0},
+      {x: 1, y: 1},
+      {x: 1, y: 2},
+      {x: 2, y: 0},
+      {x: 2, y: 2},
+      {x: 4, y: 1},
+      {x: 5, y: 0},
+      {x: 5, y: 2},
+      {x: 6, y: 2},
+    ],
+    start: {x: 0, y: 0},
+    destination: {x: 6, y: 2},
+    planks: [
+      {
+        start: {x: 0, y: 0},
+        end: {x: 1, y: 0}
+      },
+      {
+        start: {x: 1, y: 0},
+        end: {x: 2, y: 0}
+      },
+      {
+        start: {x: 2, y: 0},
+        end: {x: 5, y: 0}
+      }
+    ]
+  },
+  {
+    title: 'River Crossing Bonus 2',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 5,
+    stumps: [
+      {x: 0, y: 0},
+      {x: 1, y: 0},
+      {x: 1, y: 2},
+      {x: 2, y: 1},
+      {x: 2, y: 2},
+      {x: 3, y: 3},
+      {x: 3, y: 4},
+      {x: 4, y: 0},
+      {x: 4, y: 1},
+      {x: 4, y: 3},
+      {x: 5, y: 1},
+      {x: 5, y: 4},
+      {x: 6, y: 4},
+    ],
+    start: {x: 0, y: 0},
+    destination: {x: 6, y: 4},
+    planks: [
+      {
+        start: {x: 0, y: 0},
+        end: {x: 1, y: 0}
+      },
+      {
+        start: {x: 1, y: 0},
+        end: {x: 1, y: 3}
+      },
+      {
+        start: {x: 1, y: 3},
+        end: {x: 2, y: 3}
+      }
+    ]
+  },
+  {
+    title: 'River Crossing Bonus 3',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 5,
+    stumps: [
+      {x: 0, y: 1},
+      {x: 1, y: 0},
+      {x: 1, y: 3},
+      {x: 1, y: 4},
+      {x: 2, y: 0},
+      {x: 2, y: 3},
+      {x: 3, y: 0},
+      {x: 3, y: 1},
+      {x: 3, y: 3},
+      {x: 4, y: 1},
+      {x: 4, y: 4},
+      {x: 5, y: 4},
+      {x: 6, y: 3},
+    ],
+    start: {x: 0, y: 1},
+    destination: {x: 6, y: 3},
+    planks: [
+      {
+        start: {x: 0, y: 1},
+        end: {x: 3, y: 1}
+      },
+      {
+        start: {x: 3, y: 0},
+        end: {x: 3, y: 1}
+      }
+    ]
+  },
+  {
+    title: 'River Crossing Bonus 4',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 5,
+    stumps: [
+      {x: 0, y: 2},
+      {x: 1, y: 0},
+      {x: 1, y: 1},
+      {x: 1, y: 4},
+      {x: 2, y: 0},
+      {x: 2, y: 2},
+      {x: 2, y: 4},
+      {x: 3, y: 1},
+      {x: 3, y: 3},
+      {x: 4, y: 0},
+      {x: 4, y: 2},
+      {x: 4, y: 4},
+      {x: 5, y: 1},
+      {x: 5, y: 4},
+      {x: 6, y: 1},
+    ],
+    start: {x: 0, y: 2},
+    destination: {x: 6, y: 1},
+    planks: [
+      {
+        start: {x: 0, y: 2},
+        end: {x: 2, y: 2}
+      },
+      {
+        start: {x: 1, y: 4},
+        end: {x: 2, y: 4}
+      },
+      {
+        start: {x: 4, y: 0},
+        end: {x: 4, y: 2}
+      },
+      {
+        start: {x: 4, y: 4},
+        end: {x: 5, y: 4}
+      }
+    ]
+  },
+  {
+    title: 'River Crossing Bonus 5',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 5,
+    stumps: [
+      {x: 0, y: 3},
+      {x: 1, y: 1},
+      {x: 1, y: 3},
+      {x: 2, y: 2},
+      {x: 2, y: 4},
+      {x: 3, y: 0},
+      {x: 3, y: 2},
+      {x: 3, y: 3},
+      {x: 4, y: 2},
+      {x: 4, y: 4},
+      {x: 5, y: 1},
+      {x: 5, y: 3},
+      {x: 6, y: 1},
+    ],
+    start: {x: 0, y: 3},
+    destination: {x: 6, y: 1},
+    planks: [
+      {
+        start: {x: 0, y: 3},
+        end: {x: 1, y: 3}
+      },
+      {
+        start: {x: 1, y: 1},
+        end: {x: 1, y: 3}
+      },
+      {
+        start: {x: 2, y: 4},
+        end: {x: 4, y: 4}
+      }
+    ]
+  },
+  {
+    title: 'River Crossing Bonus 6',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 5,
+    stumps: [
+      {x: 0, y: 1},
+      {x: 1, y: 0},
+      {x: 1, y: 2},
+      {x: 1, y: 3},
+      {x: 2, y: 1},
+      {x: 2, y: 2},
+      {x: 3, y: 0},
+      {x: 3, y: 3},
+      {x: 3, y: 4},
+      {x: 4, y: 1},
+      {x: 4, y: 2},
+      {x: 5, y: 0},
+      {x: 5, y: 1},
+      {x: 5, y: 3},
+      {x: 6, y: 2},
+    ],
+    start: {x: 0, y: 1},
+    destination: {x: 6, y: 2},
+    planks: [
+      {
+        start: {x: 0, y: 1},
+        end: {x: 2, y: 1}
+      },
+      {
+        start: {x: 2, y: 1},
+        end: {x: 2, y: 2}
+      },
+      {
+        start: {x: 1, y: 2},
+        end: {x: 1, y: 3}
+      },
+      {
+        start: {x: 3, y: 0},
+        end: {x: 3, y: 3}
+      }
+    ]
+  },
+  {
+    title: 'River Crossing Bonus 7',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 5,
+    stumps: [
+      {x: 0, y: 1},
+      {x: 1, y: 1},
+      {x: 1, y: 4},
+      {x: 2, y: 0},
+      {x: 2, y: 1},
+      {x: 2, y: 2},
+      {x: 2, y: 3},
+      {x: 3, y: 1},
+      {x: 3, y: 2},
+      {x: 4, y: 1},
+      {x: 4, y: 4},
+      {x: 5, y: 0},
+      {x: 5, y: 3},
+      {x: 6, y: 3},
+    ],
+    start: {x: 0, y: 1},
+    destination: {x: 6, y: 3},
+    planks: [
+      {
+        start: {x: 0, y: 1},
+        end: {x: 1, y: 1}
+      },
+      {
+        start: {x: 2, y: 2},
+        end: {x: 3, y: 2}
+      },
+      {
+        start: {x: 4, y: 1},
+        end: {x: 4, y: 4}
+      }
+    ]
+  },
+  {
+    title: 'River Crossing Bonus 8',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 5,
+    stumps: [
+      {x: 0, y: 1},
+      {x: 1, y: 1},
+      {x: 1, y: 2},
+      {x: 1, y: 4},
+      {x: 2, y: 1},
+      {x: 2, y: 3},
+      {x: 3, y: 0},
+      {x: 3, y: 2},
+      {x: 3, y: 4},
+      {x: 4, y: 3},
+      {x: 4, y: 4},
+      {x: 5, y: 0},
+      {x: 5, y: 1},
+      {x: 5, y: 4},
+      {x: 6, y: 3},
+    ],
+    start: {x: 0, y: 1},
+    destination: {x: 6, y: 3},
+    planks: [
+      {
+        start: {x: 0, y: 1},
+        end: {x: 1, y: 1}
+      },
+      {
+        start: {x: 1, y: 2},
+        end: {x: 1, y: 4}
+      },
+      {
+        start: {x: 1, y: 2},
+        end: {x: 3, y: 2}
+      },
+      {
+        start: {x: 2, y: 1},
+        end: {x: 5, y: 1}
+      }
+    ]
+  },
+  {
+    title: 'River Crossing Bonus 9',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 5,
+    stumps: [
+      {x: 0, y: 1},
+      {x: 1, y: 0},
+      {x: 1, y: 1},
+      {x: 1, y: 3},
+      {x: 1, y: 4},
+      {x: 2, y: 0},
+      {x: 2, y: 3},
+      {x: 3, y: 2},
+      {x: 3, y: 4},
+      {x: 4, y: 1},
+      {x: 4, y: 3},
+      {x: 5, y: 0},
+      {x: 5, y: 2},
+      {x: 6, y: 1},
+    ],
+    start: {x: 0, y: 1},
+    destination: {x: 6, y: 1},
+    planks: [
+      {
+        start: {x: 0, y: 1},
+        end: {x: 1, y: 1}
+      },
+      {
+        start: {x: 2, y: 0},
+        end: {x: 2, y: 3}
+      },
+      {
+        start: {x: 3, y: 2},
+        end: {x: 3, y: 4}
+      },
+      {
+        start: {x: 5, y: 0},
+        end: {x: 5, y: 3}
+      }
+    ]
+  },
+  {
+    title: 'River Crossing Bonus 10',
+    description: 'from River Crossing\'s Bonus Challenges',
+    sizeX: 7,
+    sizeY: 5,
+    stumps: [
+      {x: 0, y: 3},
+      {x: 1, y: 1},
+      {x: 1, y: 2},
+      {x: 2, y: 1},
+      {x: 2, y: 3},
+      {x: 3, y: 0},
+      {x: 3, y: 2},
+      {x: 3, y: 4},
+      {x: 4, y: 0},
+      {x: 5, y: 0},
+      {x: 5, y: 3},
+      {x: 5, y: 4},
+      {x: 6, y: 2},
+    ],
+    start: {x: 0, y: 3},
+    destination: {x: 6, y: 2},
+    planks: [
+      {
+        start: {x: 0, y: 3},
+        end: {x: 2, y: 3}
+      },
+      {
+        start: {x: 1, y: 1},
+        end: {x: 1, y: 2}
+      },
+      {
+        start: {x: 2, y: 3},
+        end: {x: 5, y: 3}
+      },
+      {
+        start: {x: 4, y: 0},
+        end: {x: 5, y: 0}
+      }
+    ]
+  },
+  {
+    title: 'Deep End',
+    description: 'from clickmazes.com',
     sizeX: 7,
     sizeY: 5,
     stumps: [
@@ -220,7 +642,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Smash Hit (clickmazes.com)',
+    title: 'Smash Hit',
+    description: 'from clickmazes.com',
     sizeX: 10,
     sizeY: 8,
     stumps: [
@@ -276,7 +699,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Route-66 (clickmazes.com)',
+    title: 'Route-66',
+    description: 'from clickmazes.com',
     sizeX: 11,
     sizeY: 9,
     stumps: [
@@ -338,7 +762,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Staircase (clickmazes.com - SwampBeast)',
+    title: 'Staircase',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 7,
     sizeY: 5,
     stumps: [
@@ -377,7 +802,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Six-squared (clickmazes.com - SwampBeast)',
+    title: 'Six-squared',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 8,
     sizeY: 6,
     stumps: [
@@ -428,7 +854,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Six-squared (clickmazes.com - SwampBeast)',
+    title: 'Six-squared',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 8,
     sizeY: 6,
     stumps: [
@@ -479,7 +906,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Expressway (clickmazes.com - SwampBeast)',
+    title: 'Expressway',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 9,
     sizeY: 7,
     stumps: [
@@ -539,7 +967,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Box Step (clickmazes.com - SwampBeast)',
+    title: 'Box Step',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 9,
     sizeY: 7,
     stumps: [
@@ -595,7 +1024,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Brute 66 (clickmazes.com - SwampBeast)',
+    title: 'Brute 66',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 9,
     sizeY: 8,
     stumps: [
@@ -658,7 +1088,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Trebuchet V2 (clickmazes.com - SwampBeast)',
+    title: 'Trebuchet V2',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 11,
     sizeY: 9,
     stumps: [
@@ -731,7 +1162,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Shuttle (clickmazes.com - SwampBeast)',
+    title: 'Shuttle',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 11,
     sizeY: 9,
     stumps: [
@@ -805,7 +1237,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Pennsylvania (clickmazes.com - SwampBeast)',
+    title: 'Pennsylvania',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
     sizeY: 10,
     stumps: [
@@ -886,7 +1319,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Parallel Universe (clickmazes.com - SwampBeast)',
+    title: 'Parallel Universe',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
     sizeY: 10,
     stumps: [
@@ -966,7 +1400,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Special Delivery (clickmazes.com - SwampBeast)',
+    title: 'Special Delivery',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
     sizeY: 10,
     stumps: [
@@ -1045,7 +1480,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Junior (clickmazes.com - SwampBeast)',
+    title: 'Junior',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 10,
     sizeY: 8,
     stumps: [
@@ -1119,7 +1555,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Stack of Five (clickmazes.com - SwampBeast)',
+    title: 'Stack of Five',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 11,
     sizeY: 9,
     stumps: [
@@ -1199,7 +1636,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Conundrum (clickmazes.com - SwampBeast)',
+    title: 'Conundrum',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
     sizeY: 10,
     stumps: [
@@ -1280,7 +1718,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Fort Mudge (clickmazes.com - SwampBeast)',
+    title: 'Fort Mudge',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
     sizeY: 10,
     stumps: [
@@ -1364,7 +1803,8 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
-    title: 'Revenge (clickmazes.com - SwampBeast)',
+    title: 'Revenge',
+    description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
     sizeY: 10,
     stumps: [

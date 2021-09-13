@@ -43,11 +43,11 @@ const StumpElement = styled.button<{
     }
   `)}
   ${props => (props.isTutorialPromptOpen && css`
-    @keyframes example {
+    @keyframes stumpTutorialBlink {
       0%   {filter: brightness(2.2);}
       100% {filter: brightness(1);}
     }
-    animation-name: example;
+    animation-name: stumpTutorialBlink;
     animation-duration: 0.8s;
     animation-iteration-count: infinite;
   `)}
@@ -68,6 +68,12 @@ const PlayerDirectionIndicator = styled.div<{ playerDirection: number }>`
 
 const TutorialText = styled.h2`
   margin: 0;
+  text-align: center;
+`
+
+const TutorialSubtext = styled.h4`
+  margin: 0;
+  text-align: center;
 `
 
 interface StumpProps {
@@ -94,8 +100,23 @@ const Stump = ({
 
   const isTutorialPromptOpen: boolean = (
     game.currentPuzzleIndex === 0 &&
-    coordsEq(puzzle.playerPosition, puzzle.start) &&
-    !!puzzle.plankByCoords(puzzle.start, coordinate)
+    (
+      (
+        coordsEq(puzzle.playerPosition, puzzle.start) &&
+        !!puzzle.plankByCoords(puzzle.start, coordinate)
+      ) ||
+      (
+        coordsEq({x: 5, y: 0}, coordinate) &&
+        !isPlayerPosition && isWalkable &&
+        includesCoord(puzzle.walkableStumps(), {x: 2, y: 0})
+      ) ||
+      (
+        coordsEq({x: 7, y: 0}, coordinate) &&
+        !isPlayerPosition && isWalkable
+      )
+      
+    )
+    
   )
 
   const handleClick = () => {
@@ -112,7 +133,11 @@ const Stump = ({
         enabled={!!isTutorialPromptOpen}
         visible={!!isTutorialPromptOpen}
         content={
-          <TutorialText>{'Click a node to move!'}</TutorialText>
+          <>
+            <TutorialText>{'Click a square to move!'}</TutorialText>
+            <TutorialSubtext>{'Or, using the keyboard, move with the arrow keys.'}</TutorialSubtext>
+            <TutorialSubtext>{'You can move to any square you\'re connected to.'}</TutorialSubtext>
+          </>
         }
       >
         <StumpElement

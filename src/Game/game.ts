@@ -37,6 +37,7 @@ export class Game {
 
 export interface PuzzleProps {
   title: string
+  description: string
 
   sizeX: number
   sizeY: number
@@ -56,6 +57,7 @@ export interface PuzzleCallbacks {
 
 export class Puzzle {
   title: string
+  description: string
 
   sizeX: number
   sizeY: number
@@ -74,6 +76,7 @@ export class Puzzle {
 
   constructor(props: PuzzleProps, callbacks: PuzzleCallbacks){
     this.title = props.title
+    this.description = props.description
     this.sizeX = props.sizeX
     this.sizeY = props.sizeY
     this.start = props.start
@@ -259,6 +262,7 @@ export class Puzzle {
 
   setPlayerDirection(direction: Direction) {
     this.playerDirection = direction
+    this.stateChangedCallback()
   }
 
   isCoordinateValid(c: Coordinate): boolean {

@@ -1,9 +1,15 @@
 import styled, { css } from 'styled-components'
 import { Coordinate, Direction } from './Game/types'
-import { coordsEq, linearDistance } from './Game/utils'
+import { coordPairEq, coordsEq, includesCoord, linearDistance } from './Game/utils'
+import Popover from './Popover'
 import { useTypedSelector } from './types'
 
-const HitboxIncreaser = styled.button<{rotation: number, length: number, showRegardlessOfHover: boolean}>`
+const HitboxIncreaser = styled.button<{
+  rotation: number,
+  length: number,
+  showRegardlessOfHover: boolean,
+  isTutorialPromptOpen: boolean
+}>`
   // TODO decrease width so we aren't coming from the center of a stump
   width: calc(${props => props.length} * 500px);
   height: 200px;
@@ -22,27 +28,47 @@ const HitboxIncreaser = styled.button<{rotation: number, length: number, showReg
   border: none;
   cursor: pointer;
 
-  :hover {
-    > div {
+  > div {
+    background: linear-gradient(to top right, #ce954f, #F0B060);
+    opacity: 0;
+
+    :hover {
       background: linear-gradient(to top right, #ce954f, #F0B060);
       opacity: 0.4;
       box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
     }
+
+    ${props => props.showRegardlessOfHover && css`
+      background: linear-gradient(to top right, #ce954f, #F0B060);
+      opacity: 0.4;
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+    `}
+
+    ${props => (props.isTutorialPromptOpen && css`
+      @keyframes placementTutorialBlink {
+        0%   {opacity: 0.4;}
+        100% {opacity: 0;}
+      }
+      animation-name: placementTutorialBlink;
+      animation-duration: 0.8s;
+      animation-iteration-count: infinite;
+    `)}
   }
-
-  ${props => props.showRegardlessOfHover && css`
-
-    > div {
-      background: linear-gradient(to top right, #ce954f, #F0B060);
-      opacity: 0.4;
-      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
-    }
-  `}
 `
 
 const PlankPlacementSlotElement = styled.div`
   width: 100%;
   height: 100%;
+`
+
+const TutorialText = styled.h2`
+  margin: 0;
+  text-align: center;
+`
+
+const TutorialSubtext = styled.h4`
+  margin: 0;
+  text-align: center;
 `
 
 interface PlankProps {
@@ -51,6 +77,7 @@ interface PlankProps {
 }
 
 const PlankPlacementSpot = ({start, end}: PlankProps) => {
+  const game = useTypedSelector(state => state.game)
   const puzzle = useTypedSelector(state => state.game.puzzle)
   const usingKeyboard = useTypedSelector(state => state.usingKeyboard)
   const length = linearDistance(start, end)
@@ -69,21 +96,52 @@ const PlankPlacementSpot = ({start, end}: PlankProps) => {
     )
   )
 
+  const isTutorialPromptOpen: boolean = (
+    game.currentPuzzleIndex === 0 && !!puzzle.currentlyCarriedPlank() &&
+    (
+      (
+        coordPairEq(start, end, {x: 2, y: 0}, {x: 4, y: 0}) &&
+        includesCoord(puzzle.walkableStumps(), {x: 2, y: 0})
+      ) ||
+      (
+        !puzzle.plankByCoords({x: 4, y: 0}, {x: 5, y: 0})
+      ) ||
+      (
+        coordPairEq(start, end, {x: 5, y: 0}, {x: 7, y: 0}) &&
+        includesCoord(puzzle.walkableStumps(), {x: 5, y: 0})
+      )
+      
+    )
+  )
+
   const handleClick = () => {
     puzzle.putDownPlank(start, end)
   }
 
   return(
-    <HitboxIncreaser
-      onClick={handleClick}
-      rotation={rotation}
-      length={length}
-      showRegardlessOfHover={showRegardlessOfHover}
+    <Popover
+      enabled={!!isTutorialPromptOpen}
+      visible={!!isTutorialPromptOpen}
+      content={
+        <>
+          <TutorialText>{'Click to place a plank!'}</TutorialText>
+          <TutorialSubtext>{'Or, using the keyboard, place up a plank by pressing space bar.'}</TutorialSubtext>
+          <TutorialSubtext>{'You can place a plank anywhere it fits.'}</TutorialSubtext>
+        </>
+      }
     >
-      <PlankPlacementSlotElement
-        
-      />
-    </HitboxIncreaser>
+      <HitboxIncreaser
+        onClick={handleClick}
+        rotation={rotation}
+        length={length}
+        showRegardlessOfHover={showRegardlessOfHover}
+        isTutorialPromptOpen={isTutorialPromptOpen}
+      >
+        <PlankPlacementSlotElement
+          
+        />
+      </HitboxIncreaser>
+    </Popover>
   )
 }
 
