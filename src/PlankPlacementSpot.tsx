@@ -109,6 +109,10 @@ const PlankPlacementSpot = ({start, end}: PlankProps) => {
       (
         coordPairEq(start, end, {x: 5, y: 0}, {x: 7, y: 0}) &&
         includesCoord(puzzle.walkableStumps(), {x: 5, y: 0})
+      ) ||
+      (
+        coordPairEq(start, end, {x: 0, y: 0}, {x: 2, y: 0}) &&
+        includesCoord(puzzle.walkableStumps(), {x: 0, y: 0})
       )
       
     )
@@ -125,8 +129,8 @@ const PlankPlacementSpot = ({start, end}: PlankProps) => {
       content={
         <>
           <TutorialText>{'Click to place a plank!'}</TutorialText>
-          <TutorialSubtext>{'Or, using the keyboard, place up a plank by pressing space bar.'}</TutorialSubtext>
-          <TutorialSubtext>{'You can place a plank anywhere it fits.'}</TutorialSubtext>
+          <TutorialSubtext>{'Or, using the keyboard, place a plank by pressing space bar.'}</TutorialSubtext>
+          <TutorialSubtext>{'You can place a plank anywhere you\'re connected to, if it fits.'}</TutorialSubtext>
         </>
       }
     >

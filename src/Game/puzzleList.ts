@@ -272,11 +272,11 @@ export const puzzleList: PuzzleProps[] = [
       },
       {
         start: {x: 1, y: 0},
-        end: {x: 1, y: 3}
+        end: {x: 1, y: 2}
       },
       {
-        start: {x: 1, y: 3},
-        end: {x: 2, y: 3}
+        start: {x: 1, y: 2},
+        end: {x: 2, y: 2}
       }
     ]
   },
@@ -555,7 +555,7 @@ export const puzzleList: PuzzleProps[] = [
       },
       {
         start: {x: 5, y: 0},
-        end: {x: 5, y: 3}
+        end: {x: 5, y: 2}
       }
     ]
   },

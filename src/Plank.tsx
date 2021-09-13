@@ -80,6 +80,10 @@ const Plank = ({plank}: PlankProps) => {
       (
         !!(coordsEq({x: 5, y: 0}, puzzle.playerPosition)) &&
         plankEq(plank, {x: 2, y: 0}, {x: 4, y: 0})
+      ) ||
+      (
+        !!(coordsEq({x: 4, y: 0}, puzzle.playerPosition)) &&
+        plankEq(plank, {x: 2, y: 0}, {x: 4, y: 0})
       )
     )
   )

@@ -107,8 +107,8 @@ const Stump = ({
       ) ||
       (
         coordsEq({x: 5, y: 0}, coordinate) &&
-        !isPlayerPosition && isWalkable &&
-        includesCoord(puzzle.walkableStumps(), {x: 2, y: 0})
+        isWalkable &&
+        coordsEq(puzzle.playerPosition, {x: 2, y: 0})
       ) ||
       (
         coordsEq({x: 7, y: 0}, coordinate) &&
