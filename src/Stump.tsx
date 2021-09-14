@@ -34,7 +34,7 @@ const StumpElement = styled.button<{
   z-index: 3;
 
   border: none;
-  overflow: hidden;
+  //overflow: hidden;
 
   ${props => (props.isWalkable && !props.isPlayerPosition && css`
     :hover {
@@ -53,18 +53,41 @@ const StumpElement = styled.button<{
   `)}
 `
 
-const PlayerDirectionIndicator = styled.div<{ playerDirection: number }>`
+const PlayerDirectionGlow = styled.div<{ playerDirection: number }>`
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  background: radial-gradient(160% 100% at top, #ffcf75 20%, transparent 45%);
+
   width: 100%;
   height: 100%;
+
+  border-radius: 30px;
+  background: radial-gradient(160% 100% at top, #9fff45 15%, transparent 45%);
   transform: rotate(${props => props.playerDirection}deg);
   // transform-origin: center 0px;
 ` 
+
+const PlayerDirectionArrow = styled.div`
+  position: absolute;
+  top: -30px;
+
+  // center horizontally
+  left: 0; 
+  right: 0;
+  margin-left: auto; 
+  margin-right: auto;
+
+  // Arrow effect
+  width: 0; 
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 60px solid #ff1e1e;
+
+  //box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.35);
+`
 
 const TutorialText = styled.h2`
   margin: 0;
@@ -150,9 +173,11 @@ const Stump = ({
         >
           {
             isPlayerPosition && playerDirection !== null && (
-              <PlayerDirectionIndicator
+              <PlayerDirectionGlow
                 playerDirection={playerDirection}
-              />
+              >
+                <PlayerDirectionArrow />
+              </PlayerDirectionGlow>
             )
           }
         </StumpElement>
