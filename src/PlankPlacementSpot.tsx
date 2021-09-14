@@ -104,7 +104,8 @@ const PlankPlacementSpot = ({start, end}: PlankProps) => {
         includesCoord(puzzle.walkableStumps(), {x: 2, y: 0})
       ) ||
       (
-        !puzzle.plankByCoords({x: 4, y: 0}, {x: 5, y: 0})
+        !puzzle.plankByCoords({x: 4, y: 0}, {x: 5, y: 0}) &&
+        !!puzzle.plankByCoords({x: 2, y: 0}, {x: 4, y: 0})
       ) ||
       (
         coordPairEq(start, end, {x: 5, y: 0}, {x: 7, y: 0}) &&

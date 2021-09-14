@@ -1,5 +1,3 @@
-import { createThis } from "typescript"
-import PlankPlacementSpot from "../PlankPlacementSpot"
 import { puzzleList } from "./puzzleList"
 import { Coordinate, Direction, Directions } from "./types"
 import { coordsEq, includesCoord, linearDistance } from "./utils"
@@ -8,17 +6,10 @@ import { coordsEq, includesCoord, linearDistance } from "./utils"
 export class Game {
   currentPuzzleIndex = 0
   
-  onPuzzleCompletionCallback = () => {
-    const nextPuzzleIndex: number = this.currentPuzzleIndex < puzzleList.length - 1 ? this.currentPuzzleIndex + 1 : 0
-    this.setPuzzle(nextPuzzleIndex)
-  }
-
-  
   // operationCallback is called upon completion of any update to the gameState
   operationCallback: () => void  = () => {}
   puzzle: Puzzle = new Puzzle(puzzleList[this.currentPuzzleIndex], {
     stateChangedCallback: this.operationCallback,
-    completionCallback: this.onPuzzleCompletionCallback,
   })
   setCallback(callback: () => void) {
     this.operationCallback = callback
@@ -29,7 +20,6 @@ export class Game {
     this.currentPuzzleIndex = puzzleIndex
     this.puzzle = new Puzzle(puzzleList[puzzleIndex], {
       stateChangedCallback: this.operationCallback,
-      completionCallback: this.onPuzzleCompletionCallback,
     })
     this.operationCallback()
   }
@@ -52,7 +42,6 @@ export interface PuzzleProps {
 
 export interface PuzzleCallbacks {
   stateChangedCallback: () => void
-  completionCallback: () => void
 }
 
 export class Puzzle {
@@ -71,8 +60,9 @@ export class Puzzle {
   stumps: Coordinate[]
   planks: Plank[]
 
+  isComplete: boolean
+
   stateChangedCallback: () => void
-  completionCallback: () => void
 
   constructor(props: PuzzleProps, callbacks: PuzzleCallbacks){
     this.title = props.title
@@ -89,13 +79,9 @@ export class Puzzle {
     for (const plankProps of props.planks) {
       this.planks.push(new Plank(plankProps))
     }
+    this.isComplete = false
 
     this.stateChangedCallback = callbacks.stateChangedCallback
-    this.completionCallback = callbacks.completionCallback
-  }
-
-  isComplete(): boolean {
-    return coordsEq(this.playerPosition, this.destination)
   }
 
   plankPlacementSpots(): [Coordinate, Coordinate][] {
@@ -243,8 +229,8 @@ export class Puzzle {
   moveTo(c: Coordinate) {
     if (!this.canMoveTo(c)) throw Error()
     this.playerPosition = c
-    if (this.isComplete()) {
-      this.completionCallback()
+    if (coordsEq(this.playerPosition, this.destination)) {
+      this.isComplete = true
     }
     this.stateChangedCallback()
   }

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import styled from "styled-components";
+import AnimationLayer from "./AnimationLayer";
+import { puzzleList } from "./Game/puzzleList";
 import Grid from "./Grid";
 import HeaderBar from "./HeaderBar";
 import { useForceUpdate } from "./hooks/useForceUpdate";
@@ -29,13 +31,22 @@ const GameGridWrapper = styled.div`
 const GameView = () => {
   const forceUpdate = useForceUpdate()
   const dispatch = useTypedDispatch()
-  const { game } = useTypedSelector(state => state)
+  const game = useTypedSelector(state => state.game)
+  const puzzle = useTypedSelector(state => state.game.puzzle)
   usePuzzleKeyboardListener()
 
   // init behaviour
   useEffect(() => {
     game.setCallback(forceUpdate)
   }, [dispatch, forceUpdate, game])
+
+  useEffect(() => {
+    if (puzzle.isComplete) {
+      // const nextPuzzleIndex: number = game.currentPuzzleIndex < puzzleList.length - 1 ? game.currentPuzzleIndex + 1 : 0
+      // game.setPuzzle(nextPuzzleIndex)
+    }
+  }, [puzzle.isComplete])
+
   return (
     <GameViewContainer>
       <HeaderBar />
@@ -44,6 +55,7 @@ const GameView = () => {
           <Grid />
         </LetterboxFitContainer>
       </GameGridWrapper>
+      <AnimationLayer />
     </GameViewContainer>
   );
 }

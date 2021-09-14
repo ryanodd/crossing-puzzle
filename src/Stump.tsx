@@ -26,6 +26,14 @@ const StumpElement = styled.button<{
     linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%, #000000);
     background-size: 120px 120px;
     background-position: 0 0, 60px 60px;
+
+    ${props.isPlayerPosition && css`
+      @keyframes stumpFinish {
+        0%   {transform: rotate(0deg);}
+        100% {transform: rotate(1080deg);}
+      }
+      animation: stumpFinish 2s cubic-bezier(0.100, 0.225, 0.605, 0.995);
+    `}
   `}
 
   border-radius: 30px;
@@ -172,7 +180,7 @@ const Stump = ({
           disabled={!isWalkable}
         >
           {
-            isPlayerPosition && playerDirection !== null && (
+            isPlayerPosition && !isDestination && playerDirection !== null && (
               <PlayerDirectionGlow
                 playerDirection={playerDirection}
               >
