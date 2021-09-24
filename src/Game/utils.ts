@@ -52,7 +52,7 @@ export const pointsBetween = (a: Coordinate, b: Coordinate): Coordinate[] => {
   } else if (a.y === b.y) {
     if (a.x <= b.x) {
       let pointToCheck = {x: a.x + 1, y: a.y}
-      while (pointToCheck.x < a.x) {
+      while (pointToCheck.x < b.x) {
         returnList.push({x: pointToCheck.x, y: pointToCheck.y})
         pointToCheck = {x: pointToCheck.x + 1, y: pointToCheck.y}
       }
