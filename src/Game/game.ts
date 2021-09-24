@@ -201,9 +201,6 @@ export class Puzzle {
   }
 
   isPlankSpaceEmpty(start: Coordinate, end: Coordinate) {
-    if (start === {x: 4, y: 3} && end === {x: 6, y: 3}) {
-      console.log('aaa')
-    }
     const pointsBetweenStartAndEnd = pointsBetween(start, end)
     for (const plank of this.planks){
       if (plank.start && plank.end) {

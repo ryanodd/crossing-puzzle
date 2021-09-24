@@ -15,11 +15,16 @@ const HitboxIncreaser = styled.button<{
   height: 200px;
   background: transparent;
   
-  left: 50%;
   transform: rotate(${props => props.rotation}deg);
   transform-origin: center left;
 
   position: absolute;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
   z-index: 2;
 
   box-sizing: content-box;

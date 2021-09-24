@@ -16,12 +16,17 @@ const PlankElement = styled.button<{
   height: 200px;
   background: linear-gradient(to top right, #d1a46d, #dbb17e);
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.3);
-  left: 50%;
+  
   transform: rotate(${props => props.rotation}deg);
   transform-origin: center left;
   position: absolute;
-  z-index: 2;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 
+  z-index: 2;
   border: none;
 
   ${props => props.ableToPickUp && css`
