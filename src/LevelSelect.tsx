@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { SET_LEVEL_SELECT_OPEN } from './actions'
 import { Button } from './Button'
 import { puzzleList } from './Game/puzzleList'
-import { useTypedSelector } from './types'
+import { useTypedDispatch, useTypedSelector } from './types'
 
 const LevelSelect = styled.div`
   width: 100%;
@@ -9,7 +10,7 @@ const LevelSelect = styled.div`
   box-sizing: border-box;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 12px;
 `
 
@@ -23,9 +24,11 @@ const LevelButton = styled(Button)`
 
 const PlankPlacementSpot = () => {
   const { game } = useTypedSelector(state => state)
+  const dispatch = useTypedDispatch()
   const puzzles = puzzleList
 
   const onPuzzleSelect = (index: number) => {
+    dispatch({type: SET_LEVEL_SELECT_OPEN, payload: false})
     game.setPuzzle(index)
   }
 

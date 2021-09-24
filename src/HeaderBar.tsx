@@ -6,6 +6,7 @@ import { useForceUpdate } from "./hooks/useForceUpdate";
 import LevelSelect from "./LevelSelect";
 import { useTypedDispatch, useTypedSelector } from "./types";
 import { Button } from "./Button";
+import { SET_LEVEL_SELECT_OPEN } from "./actions";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -47,7 +48,8 @@ const LevelSelectButton = styled(Button)`
 `
 
 const HeaderBar = () => {
-  const { game } = useTypedSelector(state => state)
+  const { game, isLevelSelectOpen } = useTypedSelector(state => state)
+  const dispatch = useTypedDispatch()
   return (
     <Wrapper>
       <LeftSection>
@@ -57,13 +59,19 @@ const HeaderBar = () => {
       </MiddleSection>
       <RightSection>
         <Popover
-          trigger={'click'}
+          visible={isLevelSelectOpen}
           placement={'bottomRight'}
           content={
             <LevelSelect />
           }
         >
-          <LevelSelectButton>
+          <LevelSelectButton
+            onClick={() => {
+              dispatch({
+                type: SET_LEVEL_SELECT_OPEN,
+                payload: !isLevelSelectOpen})
+            }}
+          >
             <BarsOutlined style={{ fontSize: '2.5rem' }} />
           </LevelSelectButton>
         </Popover>

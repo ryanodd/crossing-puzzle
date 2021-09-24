@@ -42,8 +42,11 @@ const GameView = () => {
 
   useEffect(() => {
     if (puzzle.isComplete) {
-      // const nextPuzzleIndex: number = game.currentPuzzleIndex < puzzleList.length - 1 ? game.currentPuzzleIndex + 1 : 0
-      // game.setPuzzle(nextPuzzleIndex)
+      setTimeout(() => {
+        const nextPuzzleIndex: number =
+          game.currentPuzzleIndex < puzzleList.length - 1 ? game.currentPuzzleIndex + 1 : 0
+        game.setPuzzle(nextPuzzleIndex)
+      }, 3500)
     }
   }, [puzzle.isComplete])
 
