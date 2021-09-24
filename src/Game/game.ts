@@ -1,6 +1,6 @@
 import { puzzleList } from "./puzzleList"
 import { Coordinate, Direction, Directions } from "./types"
-import { coordsEq, includesCoord, linearDistance } from "./utils"
+import { coordsEq, includesCoord, linearDistance, pointsBetween } from "./utils"
 
 // Point of contact with React
 export class Game {
@@ -97,7 +97,7 @@ export class Puzzle {
         for (const direction of Directions) {
           const closestStump = this.closestStumpInDirection(stump, direction)
           if (!closestStump || includesCoord(checkedStumps, stump)) continue
-          if (linearDistance(stump, closestStump) === plankLength){
+          if (linearDistance(stump, closestStump) === plankLength && this.isPlankSpaceEmpty(stump, closestStump)){
             if (stump.x < closestStump.x || stump.y < closestStump.y) {
               plankPlacementSpots.push([stump, closestStump])
             } else {
@@ -198,6 +198,24 @@ export class Puzzle {
     if (!plank) return false
     if (this.currentlyCarriedPlank()) return false
     return includesCoord(walkableStumps, start) || includesCoord(walkableStumps, end)
+  }
+
+  isPlankSpaceEmpty(start: Coordinate, end: Coordinate) {
+    if (start === {x: 4, y: 3} && end === {x: 6, y: 3}) {
+      console.log('aaa')
+    }
+    const pointsBetweenStartAndEnd = pointsBetween(start, end)
+    for (const plank of this.planks){
+      if (plank.start && plank.end) {
+        const pointsCoveredByPlank = pointsBetween(plank.start, plank.end)
+        for (const plankPoint of pointsCoveredByPlank) {
+          if (includesCoord(pointsBetweenStartAndEnd, plankPoint)) {
+            return false
+          }
+        }
+      } 
+    }
+    return true
   }
 
   canPutDownPlank(start: Coordinate, end: Coordinate) {

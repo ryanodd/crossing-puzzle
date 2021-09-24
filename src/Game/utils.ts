@@ -31,3 +31,38 @@ export const linearDistance = (a: Coordinate, b: Coordinate) => {
     throw Error();
   }
 }
+
+// Doesn't include a or b
+export const pointsBetween = (a: Coordinate, b: Coordinate): Coordinate[] => {
+  let returnList: Coordinate[] = [] 
+  if (a.x === b.x) {
+    if (a.y <= b.y) {
+      let pointToCheck = {x: a.x, y: a.y + 1}
+      while (pointToCheck.y < b.y) {
+        returnList.push({x: pointToCheck.x, y: pointToCheck.y})
+        pointToCheck = {x: pointToCheck.x, y: pointToCheck.y + 1}
+      }
+    } else {
+      let pointToCheck = {x: b.x, y: b.y + 1}
+      while (pointToCheck.y < a.y) {
+        returnList.push({x: pointToCheck.x, y: pointToCheck.y})
+        pointToCheck = {x: pointToCheck.x, y: pointToCheck.y + 1}
+      }
+    }
+  } else if (a.y === b.y) {
+    if (a.x <= b.x) {
+      let pointToCheck = {x: a.x + 1, y: a.y}
+      while (pointToCheck.x < a.x) {
+        returnList.push({x: pointToCheck.x, y: pointToCheck.y})
+        pointToCheck = {x: pointToCheck.x + 1, y: pointToCheck.y}
+      }
+    } else {
+      let pointToCheck = {x: b.x + 1, y: b.y}
+      while (pointToCheck.x < a.x) {
+        returnList.push({x: pointToCheck.x, y: pointToCheck.y})
+        pointToCheck = {x: pointToCheck.x + 1, y: pointToCheck.y}
+      }
+    }
+  }
+  return returnList
+}
