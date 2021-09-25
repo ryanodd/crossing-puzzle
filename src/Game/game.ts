@@ -1,6 +1,6 @@
 import { puzzleList } from "./puzzleList"
 import { Coordinate, Direction, Directions } from "./types"
-import { coordsEq, includesCoord, linearDistance, pointsBetween } from "./utils"
+import { coordPairEq, coordsEq, includesCoord, linearDistance, plankEq, pointsBetween } from "./utils"
 
 // Point of contact with React
 export class Game {
@@ -201,10 +201,13 @@ export class Puzzle {
   }
 
   isPlankSpaceEmpty(start: Coordinate, end: Coordinate) {
-    const pointsBetweenStartAndEnd = pointsBetween(start, end)
+    const pointsBetweenStartAndEnd = pointsBetween(start, end, false)
     for (const plank of this.planks){
       if (plank.start && plank.end) {
-        const pointsCoveredByPlank = pointsBetween(plank.start, plank.end)
+        if (plankEq(plank, start, end)) {
+          return false
+        }
+        const pointsCoveredByPlank = pointsBetween(plank.start, plank.end, true)
         for (const plankPoint of pointsCoveredByPlank) {
           if (includesCoord(pointsBetweenStartAndEnd, plankPoint)) {
             return false
@@ -218,10 +221,7 @@ export class Puzzle {
   canPutDownPlank(start: Coordinate, end: Coordinate) {
     const plankPlacementSpots = this.plankPlacementSpots()
     for (const pair of plankPlacementSpots) {
-      if (
-        (coordsEq(start, pair[0]) && coordsEq(end, pair[1])) ||
-        (coordsEq(start, pair[1]) && coordsEq(end, pair[0]))
-      ) {
+      if (coordPairEq(start, end, pair[0], pair[1])){
         return true
       }
     }
