@@ -39,7 +39,10 @@ const StumpElement = styled.button<{
   border-radius: 30px;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.35);
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
   z-index: 3;
 
