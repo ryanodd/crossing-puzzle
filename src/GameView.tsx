@@ -46,7 +46,7 @@ const GameView = () => {
         const nextPuzzleIndex: number =
           game.currentPuzzleIndex < puzzleList.length - 1 ? game.currentPuzzleIndex + 1 : 0
         game.setPuzzle(nextPuzzleIndex)
-      }, 3500)
+      }, 2400)
     }
   }, [puzzle.isComplete])
 

@@ -69,7 +69,8 @@ const HeaderBar = () => {
             onClick={() => {
               dispatch({
                 type: SET_LEVEL_SELECT_OPEN,
-                payload: !isLevelSelectOpen})
+                payload: !isLevelSelectOpen
+              })
             }}
           >
             <BarsOutlined style={{ fontSize: '2.5rem' }} />
