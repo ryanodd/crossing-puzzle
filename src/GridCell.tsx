@@ -37,6 +37,7 @@ const GridCell = ({x, y}: GridCellProps) => {
       {
         hasStump && (
           <Stump
+            key={`${x}.${y}`}
             coordinate={{x, y}}
           /> 
         )

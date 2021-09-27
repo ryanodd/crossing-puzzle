@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styled from "styled-components";
+import { SET_GAME_PROGRESS } from "./actions";
 import AnimationLayer from "./AnimationLayer";
 import { puzzleList } from "./Game/puzzleList";
 import Grid from "./Grid";
@@ -43,6 +44,7 @@ const GameView = () => {
   useEffect(() => {
     if (puzzle.isComplete) {
       setTimeout(() => {
+        dispatch({type: SET_GAME_PROGRESS, payload: puzzle.id})
         const nextPuzzleIndex: number =
           game.currentPuzzleIndex < puzzleList.length - 1 ? game.currentPuzzleIndex + 1 : 0
         game.setPuzzle(nextPuzzleIndex)

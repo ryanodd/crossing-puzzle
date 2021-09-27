@@ -14,16 +14,21 @@ const LevelSelect = styled.div`
   grid-gap: 12px;
 `
 
-const LevelButton = styled(Button)`
+const LevelButton = styled(Button)<{ completed: boolean }>`
   width: 40px;
   height: 40px;
 
   font-size: 1.4rem;
+
+  ${(props) => props.completed && `
+    background: linear-gradient(to top right, #41d361, #4de06d);
+  `}
   //background: linear-gradient(to top right, #41b1d3, #50c6eb);
 `
 
 const PlankPlacementSpot = () => {
   const { game } = useTypedSelector(state => state)
+  const { gameProgress } = useTypedSelector(state => state)
   const dispatch = useTypedDispatch()
   const puzzles = puzzleList
 
@@ -38,6 +43,7 @@ const PlankPlacementSpot = () => {
       puzzles.map((puzzle, i) => 
         <LevelButton
           onClick={() => onPuzzleSelect(i)}
+          completed={gameProgress.levelsComplete[puzzle.id] === true}
         >
           {i+1}
         </LevelButton>

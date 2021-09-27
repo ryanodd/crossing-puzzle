@@ -61,6 +61,13 @@ const HeaderBar = () => {
         <Popover
           visible={isLevelSelectOpen}
           placement={'bottomRight'}
+          trigger="click"
+          onVisibleChange={(visible) => {
+            dispatch({
+              type: SET_LEVEL_SELECT_OPEN,
+              payload: visible
+            })
+          }}
           content={
             <LevelSelect />
           }

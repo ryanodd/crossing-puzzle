@@ -16,3 +16,7 @@ export const Directions = [
   Direction.SOUTH,
   Direction.WEST
 ]
+
+export type GameProgress = {
+  levelsComplete: Record<number, boolean>
+}

@@ -2,6 +2,7 @@ import { PuzzleProps } from "./game";
 
 export const puzzleList: PuzzleProps[] = [
   {
+    id: 0,
     title: 'Tutorial',
     description: '',
     sizeX: 8,
@@ -27,6 +28,7 @@ export const puzzleList: PuzzleProps[] = [
     ],
   },
   {
+    id: 500,
     title: 'Warmup A',
     description: 'from clickmazes.com',
     sizeX: 7,
@@ -61,6 +63,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 501,
     title: 'Warmup B',
     description: 'from clickmazes.com',
     sizeX: 10,
@@ -98,6 +101,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 502,
     title: 'Warmup C',
     description: 'from clickmazes.com',
     sizeX: 10,
@@ -135,6 +139,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 503,
     title: 'Warmup D',
     description: 'from clickmazes.com',
     sizeX: 10,
@@ -173,6 +178,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 504,
     title: 'Warmup E',
     description: 'from clickmazes.com',
     sizeX: 10,
@@ -210,6 +216,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 100,
     title: 'River Crossing 1',
     description: 'from River Crossing',
     sizeX: 7,
@@ -236,6 +243,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 101,
     title: 'River Crossing 2',
     description: 'from River Crossing',
     sizeX: 7,
@@ -269,6 +277,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 102,
     title: 'River Crossing 3',
     description: 'from River Crossing',
     sizeX: 7,
@@ -298,6 +307,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 103,
     title: 'River Crossing 4',
     description: 'from River Crossing',
     sizeX: 7,
@@ -334,6 +344,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 104,
     title: 'River Crossing 5',
     description: 'from River Crossing',
     sizeX: 7,
@@ -368,6 +379,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 105,
     title: 'River Crossing 6',
     description: 'from River Crossing',
     sizeX: 7,
@@ -402,6 +414,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 106,
     title: 'River Crossing 7',
     description: 'from River Crossing',
     sizeX: 7,
@@ -436,6 +449,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 107,
     title: 'River Crossing 8',
     description: 'from River Crossing',
     sizeX: 7,
@@ -473,6 +487,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 108,
     title: 'River Crossing 9',
     description: 'from River Crossing',
     sizeX: 7,
@@ -508,6 +523,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 109,
     title: 'River Crossing 10',
     description: 'from River Crossing',
     sizeX: 7,
@@ -543,6 +559,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 110,
     title: 'River Crossing 11',
     description: 'from River Crossing',
     sizeX: 7,
@@ -574,6 +591,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 111,
     title: 'River Crossing 12',
     description: 'from River Crossing',
     sizeX: 7,
@@ -605,6 +623,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 112,
     title: 'River Crossing 13',
     description: 'from River Crossing',
     sizeX: 7,
@@ -641,6 +660,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 113,
     title: 'River Crossing 14',
     description: 'from River Crossing',
     sizeX: 7,
@@ -677,6 +697,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 114,
     title: 'River Crossing 15',
     description: 'from River Crossing',
     sizeX: 7,
@@ -715,6 +736,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 115,
     title: 'River Crossing 16',
     description: 'from River Crossing',
     sizeX: 7,
@@ -749,6 +771,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 116,
     title: 'River Crossing 17',
     description: 'from River Crossing',
     sizeX: 7,
@@ -784,6 +807,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 117,
     title: 'River Crossing 18',
     description: 'from River Crossing',
     sizeX: 7,
@@ -823,6 +847,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 118,
     title: 'River Crossing 19',
     description: 'from River Crossing',
     sizeX: 7,
@@ -861,6 +886,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 119,
     title: 'River Crossing 20',
     description: 'from River Crossing',
     sizeX: 7,
@@ -900,6 +926,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 120,
     title: 'River Crossing 21',
     description: 'from River Crossing',
     sizeX: 7,
@@ -939,6 +966,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 121,
     title: 'River Crossing 22',
     description: 'from River Crossing',
     sizeX: 7,
@@ -981,6 +1009,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 122,
     title: 'River Crossing 23',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1018,6 +1047,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 123,
     title: 'River Crossing 24',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1057,6 +1087,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 124,
     title: 'River Crossing 25',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1095,6 +1126,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 125,
     title: 'River Crossing 26',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1134,6 +1166,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 126,
     title: 'River Crossing 27',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1170,6 +1203,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 127,
     title: 'River Crossing 28',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1212,6 +1246,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 128,
     title: 'River Crossing 29',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1255,6 +1290,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 129,
     title: 'River Crossing 30',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1297,6 +1333,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 130,
     title: 'River Crossing 31',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1340,6 +1377,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 131,
     title: 'River Crossing 32',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1384,6 +1422,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 132,
     title: 'River Crossing 33',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1424,6 +1463,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 133,
     title: 'River Crossing 34',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1463,6 +1503,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 134,
     title: 'River Crossing 35',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1502,6 +1543,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 135,
     title: 'River Crossing 36',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1545,6 +1587,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 136,
     title: 'River Crossing 37',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1584,6 +1627,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 137,
     title: 'River Crossing 38',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1630,6 +1674,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 138,
     title: 'River Crossing 39',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1675,6 +1720,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 139,
     title: 'River Crossing 40',
     description: 'from River Crossing',
     sizeX: 7,
@@ -1718,6 +1764,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 200,
     title: 'River Crossing Bonus 1',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -1752,6 +1799,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 201,
     title: 'River Crossing Bonus 2',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -1789,6 +1837,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 202,
     title: 'River Crossing Bonus 3',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -1822,6 +1871,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 203,
     title: 'River Crossing Bonus 4',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -1865,6 +1915,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 204,
     title: 'River Crossing Bonus 5',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -1902,6 +1953,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 205,
     title: 'River Crossing Bonus 6',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -1945,6 +1997,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 206,
     title: 'River Crossing Bonus 7',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -1983,6 +2036,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 207,
     title: 'River Crossing Bonus 8',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -2026,6 +2080,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 208,
     title: 'River Crossing Bonus 9',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -2068,6 +2123,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 209,
     title: 'River Crossing Bonus 10',
     description: 'from River Crossing\'s Bonus Challenges',
     sizeX: 7,
@@ -2109,6 +2165,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 300,
     title: 'Deep End',
     description: 'from clickmazes.com',
     sizeX: 7,
@@ -2150,6 +2207,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 301,
     title: 'Smash Hit',
     description: 'from clickmazes.com',
     sizeX: 10,
@@ -2207,6 +2265,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 302,
     title: 'Route-66',
     description: 'from clickmazes.com',
     sizeX: 11,
@@ -2270,6 +2329,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 303,
     title: 'Staircase',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 7,
@@ -2310,6 +2370,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 304,
     title: 'Six-squared',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 8,
@@ -2362,6 +2423,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 305,
     title: 'Six-squared',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 8,
@@ -2414,6 +2476,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 306,
     title: 'Expressway',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 9,
@@ -2475,6 +2538,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 307,
     title: 'Box Step',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 9,
@@ -2532,6 +2596,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 308,
     title: 'Brute 66',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 9,
@@ -2596,6 +2661,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 309,
     title: 'Trebuchet V2',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 11,
@@ -2670,6 +2736,7 @@ export const puzzleList: PuzzleProps[] = [
     ]
   },
   {
+    id: 310,
     title: 'Shuttle',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 11,
@@ -2739,12 +2806,10 @@ export const puzzleList: PuzzleProps[] = [
         start: {x: 9, y: 3},
         end: {x: 9, y: 5}
       }
-      
-
-      
     ]
   },
   {
+    id: 311,
     title: 'Pennsylvania',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
@@ -2820,13 +2885,11 @@ export const puzzleList: PuzzleProps[] = [
       {
         start: {x: 9, y: 0},
         end: {x: 10, y: 0}
-      }
-      
-
-      
+      } 
     ]
   },
   {
+    id: 312,
     title: 'Parallel Universe',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
@@ -2902,12 +2965,10 @@ export const puzzleList: PuzzleProps[] = [
         start: {x: 3, y: 9},
         end: {x: 5, y: 9}
       }
-      
-
-      
     ]
   },
   {
+    id: 313,
     title: 'Special Delivery',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
@@ -2982,12 +3043,10 @@ export const puzzleList: PuzzleProps[] = [
         start: {x: 8, y: 8},
         end: {x: 10, y: 8}
       }
-      
-
-      
     ]
   },
   {
+    id: 314,
     title: 'Junior',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 10,
@@ -3028,11 +3087,7 @@ export const puzzleList: PuzzleProps[] = [
       {x: 8, y: 3},
       {x: 8, y: 7},
 
-      {x: 9, y: 5},
-      
-      
-
-      
+      {x: 9, y: 5}, 
     ],
     start: {x: 0, y: 0},
     destination: {x: 9, y: 5},
@@ -3057,12 +3112,10 @@ export const puzzleList: PuzzleProps[] = [
         start: {x: 7, y: 2},
         end: {x: 7, y: 7}
       }
-      
-
-      
     ]
   },
   {
+    id: 315,
     title: 'Stack of Five',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 11,
@@ -3138,12 +3191,10 @@ export const puzzleList: PuzzleProps[] = [
         start: {x: 3, y: 7},
         end: {x: 8, y: 7}
       }
-      
-
-      
     ]
   },
   {
+    id: 316,
     title: 'Conundrum',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
@@ -3220,12 +3271,10 @@ export const puzzleList: PuzzleProps[] = [
         start: {x: 10, y: 1},
         end: {x: 10, y: 6}
       }
-      
-
-      
     ]
   },
   {
+    id: 317,
     title: 'Fort Mudge',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
@@ -3304,13 +3353,11 @@ export const puzzleList: PuzzleProps[] = [
       {
         start: {x: 10, y: 4},
         end: {x: 10, y: 9}
-      }
-      
-
-      
+      }      
     ]
   },
   {
+    id: 318,
     title: 'Revenge',
     description: 'from clickmazes.com - Swampbeast',
     sizeX: 12,
@@ -3388,9 +3435,6 @@ export const puzzleList: PuzzleProps[] = [
         start: {x: 8, y: 1},
         end: {x: 8, y: 5}
       }
-      
-
-      
     ]
   },
 ]

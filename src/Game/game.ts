@@ -26,6 +26,7 @@ export class Game {
 }
 
 export interface PuzzleProps {
+  id: number,
   title: string
   description: string
 
@@ -45,6 +46,7 @@ export interface PuzzleCallbacks {
 }
 
 export class Puzzle {
+  id: number
   title: string
   description: string
 
@@ -65,6 +67,7 @@ export class Puzzle {
   stateChangedCallback: () => void
 
   constructor(props: PuzzleProps, callbacks: PuzzleCallbacks){
+    this.id = props.id
     this.title = props.title
     this.description = props.description
     this.sizeX = props.sizeX
