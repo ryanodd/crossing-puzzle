@@ -1,12 +1,12 @@
-import { Popover } from "antd";
-import { useEffect } from "react";
-import styled from "styled-components";
+import { Popover } from "antd"
+import { useEffect } from "react"
+import styled from "styled-components"
 import { BarsOutlined } from "@ant-design/icons"
-import { useForceUpdate } from "./hooks/useForceUpdate";
-import LevelSelect from "./LevelSelect";
-import { useTypedDispatch, useTypedSelector } from "./types";
-import { Button } from "./Button";
-import { SET_LEVEL_SELECT_OPEN } from "./actions";
+import { useForceUpdate } from "./hooks/useForceUpdate"
+import LevelSelect from "./LevelSelect"
+import { useTypedDispatch, useTypedSelector } from "./types"
+import { Button } from "./Button"
+import { SET_LEVEL_SELECT_OPEN } from "./actions"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 const LeftSection = styled.div`
   flex-grow: 1;
-  
+
   position: relative;
   left: 0;
 
@@ -32,7 +32,6 @@ const MiddleSection = styled.div`
 `
 
 const RightSection = styled.div`
-
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -48,45 +47,41 @@ const LevelSelectButton = styled(Button)`
 `
 
 const HeaderBar = () => {
-  const { game, isLevelSelectOpen } = useTypedSelector(state => state)
+  const { game, isLevelSelectOpen } = useTypedSelector((state) => state)
   const dispatch = useTypedDispatch()
   return (
     <Wrapper>
-      <LeftSection>
-      </LeftSection>
+      <LeftSection></LeftSection>
       <MiddleSection>
-        <PuzzleTitle>{game.puzzle.title}</PuzzleTitle>
+        <PuzzleTitle>Level {game.currentPuzzleIndex + 1}</PuzzleTitle>
       </MiddleSection>
       <RightSection>
         <Popover
           visible={isLevelSelectOpen}
-          placement={'bottomRight'}
+          placement={"bottomRight"}
           trigger="click"
           onVisibleChange={(visible) => {
             dispatch({
               type: SET_LEVEL_SELECT_OPEN,
-              payload: visible
+              payload: visible,
             })
           }}
-          content={
-            <LevelSelect />
-          }
+          content={<LevelSelect />}
         >
           <LevelSelectButton
             onClick={() => {
               dispatch({
                 type: SET_LEVEL_SELECT_OPEN,
-                payload: !isLevelSelectOpen
+                payload: !isLevelSelectOpen,
               })
             }}
           >
-            <BarsOutlined style={{ fontSize: '2.5rem' }} />
+            <BarsOutlined style={{ fontSize: "2.5rem" }} />
           </LevelSelectButton>
         </Popover>
       </RightSection>
     </Wrapper>
-  );
+  )
 }
 
-export default HeaderBar;
-
+export default HeaderBar
